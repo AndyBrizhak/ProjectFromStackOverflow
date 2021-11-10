@@ -10,20 +10,21 @@ namespace ProjectFromStackOverflow.Controllers
     public class ContractorController : Controller
     {
         [HttpGet]
-        public IActionResult ShowContractorGet(int id)
+        public IActionResult ShowContractorGet(Contractor _contractor)
         {
             // код для извлечения объекта из БД
             var contractor = new Contractor();
-            contractor.Id = id;
+            contractor.Id = _contractor.Id;
             contractor.Name = "Test";
             return View(contractor);
             
         }
 
         [HttpPost]
-        public IActionResult ShowContractorPost(int id)
+        public IActionResult ShowContractorPost(Contractor _contractor)
         {
-            return RedirectToAction("ShowContractorGet", id);
+
+           return RedirectToAction("ShowContractorGet", _contractor);
         }
     }
 }
