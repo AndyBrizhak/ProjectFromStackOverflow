@@ -10,7 +10,6 @@ namespace ProjectFromStackOverflow.Controllers
     public class ContractorController : Controller
     {
         [HttpGet]
-        [Route("{id}")]
         public IActionResult ShowContractorGet(int id)
         {
             // код для извлечения объекта из БД
